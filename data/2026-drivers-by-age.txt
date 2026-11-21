@@ -1,0 +1,162 @@
+﻿2026 F1 车手生日 / 年龄一览
+======================================================================
+年龄基准：2026-12-31 ｜ 范围：实际参加过 2026 正赛的 25 人（截至第 21 轮，含替补）
+排序：年龄从小到大；同岁时生日更晚（更年轻）在前
+数据：Wikipedia — 2026 Formula One World Championship / Entries + In-season changes
+车号：2026 赛季 Entries 表编号（官方车号）
+
+01. 19 岁 ｜ Arvid LINDBLAD（林德布拉德）
+    车号：41 ｜ 车队：Racing Bulls（RB） ｜ 国籍：GBR 英国
+    生日：2007-08-08
+    2026：Racing Bulls 正赛。
+    2027：Racing Bulls。
+
+02. 20 岁 ｜ Kimi ANTONELLI（安东内利）
+    车号：12 ｜ 车队：Mercedes（MER） ｜ 国籍：ITA 意大利
+    生日：2006-08-25
+    2026：Mercedes 正赛。
+    2027：Mercedes。
+
+03. 21 岁 ｜ Oliver BEARMAN（贝尔曼）
+    车号：87 ｜ 车队：Haas（HAA） ｜ 国籍：GBR 英国
+    生日：2005-05-08
+    2026：Haas 正赛。
+    2027：Haas（与 CÂMARA）。
+
+04. 21 岁 ｜ Rafael CÂMARA（卡马拉）
+    车号：51 ｜ 车队：Haas（HAA） ｜ 国籍：BRA 巴西
+    生日：2005-05-05
+    2026：Haas 第 20 轮起替补 OCON（São Paulo 起）。
+    2027：Haas（与 BEARMAN）。
+
+05. 22 岁 ｜ Gabriel BORTOLETO（博尔托莱托）
+    车号：5 ｜ 车队：Audi（AUD） ｜ 国籍：BRA 巴西
+    生日：2004-10-14
+    2026：Audi 正赛。
+    2027：Audi。
+
+06. 22 岁 ｜ Isack HADJAR（哈贾尔）
+    车号：6 ｜ 车队：Red Bull（RBR） ｜ 国籍：FRA 法国
+    生日：2004-09-28
+    2026：Red Bull 1–11、15–21 轮；伤缺 12–14 轮（荷兰/意大利/西班牙）。
+    2027：Red Bull。
+
+07. 23 岁 ｜ Franco COLAPINTO（科拉平托）
+    车号：43 ｜ 车队：Alpine（ALP） ｜ 国籍：ARG 阿根廷
+    生日：2003-05-27
+    2026：Alpine 正赛。
+    2027：Alpine。
+
+08. 24 岁 ｜ Liam LAWSON（劳森）
+    车号：30 ｜ 车队：Racing Bulls（RB） ｜ 国籍：NZL 新西兰
+    生日：2002-02-11
+    2026：Racing Bulls 1–11、15–21 轮；12–14 轮替 HADJAR 出赛 Red Bull（荷兰/意大利/西班牙）。
+    2027：Racing Bulls。
+
+09. 25 岁 ｜ Oscar PIASTRI（皮亚斯特里）
+    车号：81 ｜ 车队：McLaren（MCL） ｜ 国籍：AUS 澳大利亚
+    生日：2001-04-06
+    2026：McLaren 正赛。
+    2027：McLaren。
+
+10. 26 岁 ｜ Yuki TSUNODA（角田裕毅）
+    车号：22 ｜ 车队：Racing Bulls（RB） ｜ 国籍：JPN 日本
+    生日：2000-05-11
+    2026：Racing Bulls 12–14 轮替补 LAWSON（荷兰/意大利/西班牙）。
+    2027：不在正赛阵容。
+
+11. 27 岁 ｜ Lando NORRIS（诺里斯）
+    车号：1 ｜ 车队：McLaren（MCL） ｜ 国籍：GBR 英国
+    生日：1999-11-13
+    2026：McLaren 正赛。
+    2027：McLaren。
+
+12. 28 岁 ｜ Lance STROLL（斯特罗尔）
+    车号：18 ｜ 车队：Aston Martin（AST） ｜ 国籍：CAN 加拿大
+    生日：1998-10-29
+    2026：Aston Martin 正赛。
+    2027：Aston Martin。
+
+13. 28 岁 ｜ George RUSSELL（拉塞尔）
+    车号：63 ｜ 车队：Mercedes（MER） ｜ 国籍：GBR 英国
+    生日：1998-02-15
+    2026：Mercedes 正赛。
+    2027：Mercedes。
+
+14. 29 岁 ｜ Charles LECLERC（勒克莱尔）
+    车号：16 ｜ 车队：Ferrari（FER） ｜ 国籍：MON 摩纳哥
+    生日：1997-10-16
+    2026：Ferrari 正赛。
+    2027：Ferrari。
+
+15. 29 岁 ｜ Max VERSTAPPEN（维斯塔潘）
+    车号：3 ｜ 车队：Red Bull（RBR） ｜ 国籍：NED 荷兰
+    生日：1997-09-30
+    2026：Red Bull 正赛。
+    2027：Red Bull。
+
+16. 30 岁 ｜ Esteban OCON（奥康）
+    车号：31 ｜ 车队：Haas（HAA） ｜ 国籍：FRA 法国
+    生日：1996-09-17
+    2026：Haas 正赛 1–19 轮；第 20 轮起由 CÂMARA 接替。
+    2027：不在正赛阵容。
+
+17. 30 岁 ｜ Alexander ALBON（阿尔本）
+    车号：23 ｜ 车队：Williams（WIL） ｜ 国籍：THA 泰国
+    生日：1996-03-23
+    2026：Williams 正赛。
+    2027：Williams。
+
+18. 30 岁 ｜ Pierre GASLY（加斯利）
+    车号：10 ｜ 车队：Alpine（ALP） ｜ 国籍：FRA 法国
+    生日：1996-02-07
+    2026：Alpine 正赛。
+    2027：Alpine。
+
+19. 32 岁 ｜ Carlos SAINZ（塞恩斯）
+    车号：55 ｜ 车队：Williams（WIL） ｜ 国籍：ESP 西班牙
+    生日：1994-09-01
+    2026：Williams 正赛。
+    2027：Williams。
+
+20. 32 岁 ｜ Ryo HIRAKAWA（平川亮）
+    车号：50 ｜ 车队：Haas（HAA） ｜ 国籍：JPN 日本
+    生日：1994-07-07
+    2026：Haas 第 19 轮 Mexico 替补 OCON。
+    2027：不在正赛阵容。
+
+21. 36 岁 ｜ Sergio PÉREZ（佩雷兹）
+    车号：11 ｜ 车队：Cadillac（CAD） ｜ 国籍：MEX 墨西哥
+    生日：1990-01-26
+    2026：Cadillac 正赛。
+    2027：Cadillac。
+
+22. 37 岁 ｜ Valtteri BOTTAS（博塔斯）
+    车号：77 ｜ 车队：Cadillac（CAD） ｜ 国籍：FIN 芬兰
+    生日：1989-08-28
+    2026：Cadillac 正赛。
+    2027：Cadillac。
+
+23. 39 岁 ｜ Nico HÜLKENBERG（霍肯伯格）
+    车号：27 ｜ 车队：Audi（AUD） ｜ 国籍：GER 德国
+    生日：1987-08-19
+    2026：Audi 正赛。
+    2027：Audi。
+
+24. 41 岁 ｜ Lewis HAMILTON（汉密尔顿）
+    车号：44 ｜ 车队：Ferrari（FER） ｜ 国籍：GBR 英国
+    生日：1985-01-07
+    2026：Ferrari 正赛。
+    2027：Ferrari。
+
+25. 45 岁 ｜ Fernando ALONSO（阿隆索）
+    车号：14 ｜ 车队：Aston Martin（AST） ｜ 国籍：ESP 西班牙
+    生日：1981-07-29
+    2026：Aston Martin 正赛。
+    2027：Aston Martin。
+
+----------------------------------------------------------------------
+说明：2026 数据截至第 21 轮（Las Vegas 尚未进行）；25 人 = 22 位常规 + OCON / HIRAKAWA / TSUNODA 三位实际跑过正赛的替补。
+CÂMARA 自第 20 轮起接替 OCON；HADJAR 伤缺 3 场，LAWSON 替补出赛 Red Bull 3 场，TSUNODA 替补出赛 Racing Bulls 3 场。
+年龄按 2026-12-31 计算；2027 列表示该车手是否在 2027 已官宣阵容；车号为 2026 赛季编号。
+来源与照片许可：见 CREDITS.md。

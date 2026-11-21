@@ -1,0 +1,547 @@
+{
+  "schema": 2,
+  "season": 2026,
+  "asOfDate": "2026-12-31",
+  "title": "2026 车手生日 / 年龄均排",
+  "subtitle": "",
+  "headerNote": "* 年龄截至 {date} 统计，数据来自 F1 官方与 Wikipedia。",
+  "headerSubNote": "2026 赛季正赛参赛车手 25 人（含替补；截至第 21 轮）。",
+  "footerRight": "F1 AGE CHART · 2026 SEASON",
+  "theme": "pastel",
+  "groupBy": "team",
+  "sortMode": "avgDesc",
+  "columnOrder": [],
+  "cardScale": 1,
+  "cardFill": 0.92,
+  "verticalDensity": 0.4,
+  "fontScale": 1.08,
+  "compactRows": false,
+  "cardName": "latin",
+  "showPhotos": true,
+  "showAgeBadge": true,
+  "showCountry": false,
+  "showBand": false,
+  "showFooter": false,
+  "axisGradient": true,
+  "teams": [
+    {
+      "id": "mclaren",
+      "name": "McLaren",
+      "code": "MCL",
+      "accent": "#FF8000"
+    },
+    {
+      "id": "mercedes",
+      "name": "Mercedes",
+      "code": "MER",
+      "accent": "#00A19B"
+    },
+    {
+      "id": "redbull",
+      "name": "Red Bull",
+      "code": "RBR",
+      "accent": "#3671C6"
+    },
+    {
+      "id": "ferrari",
+      "name": "Ferrari",
+      "code": "FER",
+      "accent": "#E8002D"
+    },
+    {
+      "id": "astonmartin",
+      "name": "Aston Martin",
+      "code": "AST",
+      "accent": "#229971"
+    },
+    {
+      "id": "alpine",
+      "name": "Alpine",
+      "code": "ALP",
+      "accent": "#FF87BC"
+    },
+    {
+      "id": "williams",
+      "name": "Williams",
+      "code": "WIL",
+      "accent": "#005AFF"
+    },
+    {
+      "id": "audi",
+      "name": "Audi",
+      "code": "AUD",
+      "accent": "#4A4A50"
+    },
+    {
+      "id": "racingbulls",
+      "name": "Racing Bulls",
+      "code": "RB",
+      "accent": "#6692FF"
+    },
+    {
+      "id": "haas",
+      "name": "Haas",
+      "code": "HAA",
+      "accent": "#7A7F85"
+    },
+    {
+      "id": "cadillac",
+      "name": "Cadillac",
+      "code": "CAD",
+      "accent": "#C0A062"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "norris",
+      "name": "Lando Norris",
+      "shortName": "Norris",
+      "nameZh": "诺里斯",
+      "teamId": "mclaren",
+      "country": "GBR",
+      "birthday": "1999-11-13",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "piastri",
+      "name": "Oscar Piastri",
+      "shortName": "Piastri",
+      "nameZh": "皮亚斯特里",
+      "teamId": "mclaren",
+      "country": "AUS",
+      "birthday": "2001-04-06",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "russell",
+      "name": "George Russell",
+      "shortName": "Russell",
+      "nameZh": "拉塞尔",
+      "teamId": "mercedes",
+      "country": "GBR",
+      "birthday": "1998-02-15",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "antonelli",
+      "name": "Kimi Antonelli",
+      "shortName": "Antonelli",
+      "nameZh": "安东内利",
+      "teamId": "mercedes",
+      "country": "ITA",
+      "birthday": "2006-08-25",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "verstappen",
+      "name": "Max Verstappen",
+      "shortName": "Verstappen",
+      "nameZh": "维斯塔潘",
+      "teamId": "redbull",
+      "country": "NED",
+      "birthday": "1997-09-30",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "hadjar",
+      "name": "Isack Hadjar",
+      "shortName": "Hadjar",
+      "nameZh": "哈贾尔",
+      "teamId": "redbull",
+      "country": "FRA",
+      "birthday": "2004-09-28",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "leclerc",
+      "name": "Charles Leclerc",
+      "shortName": "Leclerc",
+      "nameZh": "勒克莱尔",
+      "teamId": "ferrari",
+      "country": "MON",
+      "birthday": "1997-10-16",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.3,
+        "z": 1.02
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "hamilton",
+      "name": "Lewis Hamilton",
+      "shortName": "Hamilton",
+      "nameZh": "汉密尔顿",
+      "teamId": "ferrari",
+      "country": "GBR",
+      "birthday": "1985-01-07",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.3,
+        "z": 1.05
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "alonso",
+      "name": "Fernando Alonso",
+      "shortName": "Alonso",
+      "nameZh": "阿隆索",
+      "teamId": "astonmartin",
+      "country": "ESP",
+      "birthday": "1981-07-29",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.28,
+        "z": 1.02
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "stroll",
+      "name": "Lance Stroll",
+      "shortName": "Stroll",
+      "nameZh": "斯特罗尔",
+      "teamId": "astonmartin",
+      "country": "CAN",
+      "birthday": "1998-10-29",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.32,
+        "z": 1.05
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "gasly",
+      "name": "Pierre Gasly",
+      "shortName": "Gasly",
+      "nameZh": "加斯利",
+      "teamId": "alpine",
+      "country": "FRA",
+      "birthday": "1996-02-07",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.3,
+        "z": 1.1
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "colapinto",
+      "name": "Franco Colapinto",
+      "shortName": "Colapinto",
+      "nameZh": "科拉平托",
+      "teamId": "alpine",
+      "country": "ARG",
+      "birthday": "2003-05-27",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "albon",
+      "name": "Alexander Albon",
+      "shortName": "Albon",
+      "nameZh": "阿尔本",
+      "teamId": "williams",
+      "country": "THA",
+      "birthday": "1996-03-23",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.48,
+        "y": 0.3,
+        "z": 1.1
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "sainz",
+      "name": "Carlos Sainz",
+      "shortName": "Sainz",
+      "nameZh": "塞恩斯",
+      "teamId": "williams",
+      "country": "ESP",
+      "birthday": "1994-09-01",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.28,
+        "z": 1.08
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "hulkenberg",
+      "name": "Nico Hülkenberg",
+      "shortName": "Hülkenberg",
+      "nameZh": "霍肯伯格",
+      "teamId": "audi",
+      "country": "GER",
+      "birthday": "1987-08-19",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.3,
+        "z": 1.08
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "bortoleto",
+      "name": "Gabriel Bortoleto",
+      "shortName": "Bortoleto",
+      "nameZh": "博尔托莱托",
+      "teamId": "audi",
+      "country": "BRA",
+      "birthday": "2004-10-14",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "lawson",
+      "name": "Liam Lawson",
+      "shortName": "Lawson",
+      "nameZh": "劳森",
+      "teamId": "racingbulls",
+      "country": "NZL",
+      "birthday": "2002-02-11",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "lindblad",
+      "name": "Arvid Lindblad",
+      "shortName": "Lindblad",
+      "nameZh": "林德布拉德",
+      "teamId": "racingbulls",
+      "country": "GBR",
+      "birthday": "2007-08-08",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "perez",
+      "name": "Sergio Pérez",
+      "shortName": "Pérez",
+      "nameZh": "佩雷兹",
+      "teamId": "cadillac",
+      "country": "MEX",
+      "birthday": "1990-01-26",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.28,
+        "z": 1.12
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "bottas",
+      "name": "Valtteri Bottas",
+      "shortName": "Bottas",
+      "nameZh": "博塔斯",
+      "teamId": "cadillac",
+      "country": "FIN",
+      "birthday": "1989-08-28",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.53,
+        "y": 0.26,
+        "z": 1.12
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "bearman",
+      "name": "Oliver Bearman",
+      "shortName": "Bearman",
+      "nameZh": "贝尔曼",
+      "teamId": "haas",
+      "country": "GBR",
+      "birthday": "2005-05-08",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "camara",
+      "name": "Rafael Câmara",
+      "shortName": "Câmara",
+      "nameZh": "卡马拉",
+      "teamId": "haas",
+      "country": "BRA",
+      "birthday": "2005-05-05",
+      "status": "confirmed",
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false,
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.35,
+        "z": 1
+      }
+    },
+    {
+      "id": "ocon",
+      "name": "Esteban Ocon",
+      "shortName": "Ocon",
+      "nameZh": "奥康",
+      "teamId": "haas",
+      "country": "FRA",
+      "birthday": "1996-09-17",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.3,
+        "z": 1.02
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "hirakawa",
+      "name": "Ryo Hirakawa",
+      "shortName": "Hirakawa",
+      "nameZh": "平川亮",
+      "teamId": "haas",
+      "country": "JPN",
+      "birthday": "1994-07-07",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.3,
+        "z": 1.02
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    },
+    {
+      "id": "tsunoda",
+      "name": "Yuki Tsunoda",
+      "shortName": "Tsunoda",
+      "nameZh": "角田裕毅",
+      "teamId": "racingbulls",
+      "country": "JPN",
+      "birthday": "2000-05-11",
+      "status": "confirmed",
+      "photoFocus": {
+        "x": 0.5,
+        "y": 0.3,
+        "z": 1.02
+      },
+      "highlight": false,
+      "photo": null,
+      "photoHidden": false
+    }
+  ],
+  "exportedAt": "2026-11-20T12:00:25.536Z"
+}

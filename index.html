@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312131a'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-style='italic' font-weight='800' font-size='30' fill='%23fff' text-anchor='middle'%3EF1%3C/text%3E%3Crect x='18' y='47' width='28' height='4' fill='%23e10600'/%3E%3C/svg%3E">
+  <title>F1 2027 车手生日 / 年龄均排</title>
+  <link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">F1</span>
+      <div class="brand-copy">
+        <strong>DRIVER AGE CHART</strong>
+        <span>车手生日一图流</span>
+      </div>
+      <select class="season-chip" id="seasonChip" aria-label="选择赛季" title="切换 2027 / 2026 赛季">
+        <option value="2027">2027</option>
+        <option value="2026">2026</option>
+      </select>
+    </div>
+    <div class="topbar-actions">
+      <span class="save-state" id="saveState">已自动保存</span>
+      <button class="btn btn-primary" id="btnExportTop" type="button">导出 PNG</button>
+      <button class="btn" id="btnCopyTop" type="button">复制图片</button>
+      <a class="btn btn-icon" id="btnVideo" href="exports/f1-2027-driver-feed.mp4" target="_blank" rel="noopener" aria-label="播放大字卡片流" title="播放大字卡片流（20 秒 / 1080×1920 / 60fps）">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>
+      </a>
+      <button class="btn btn-ghost" id="btnResetTop" type="button">恢复默认</button>
+      <button class="btn btn-icon" id="btnTogglePanel" type="button" aria-label="显示 / 隐藏调整面板" aria-expanded="true" title="显示 / 隐藏调整面板">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M3 5h18v2H3V5zm0 6h18v2H3v-2zm0 6h18v2H3v-2z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="stage-pane" aria-label="图表预览">
+      <div class="stage-bar">
+        <span class="stage-hint">
+          <span class="dot"></span> 点击卡片编辑 · 拖入照片直接替换 · 全部改动自动保存
+        </span>
+        <div class="stage-tools">
+          <label class="zoom-field" for="inPreviewZoom">预览缩放</label>
+          <input type="range" id="inPreviewZoom" min="45" max="160" step="5" value="100">
+          <button class="mini-btn" id="btnFit" type="button">适应宽度</button>
+          <span class="zoom-label" id="previewZoomLabel">100%</span>
+        </div>
+      </div>
+      <div class="stage" id="stage">
+        <div class="canvas-shell" id="canvasShell">
+          <canvas id="chart" aria-label="F1 2027 车手生日年龄图表"></canvas>
+          <div class="card-ring" id="cardRing" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel" id="panel" aria-label="调整面板">
+      <div class="panel-head">
+        <div>
+          <strong>调整与导出</strong>
+          <span>所有设置与数据保存在本机浏览器</span>
+        </div>
+        <button class="panel-close" id="btnClosePanel" type="button" aria-label="关闭面板">×</button>
+      </div>
+
+      <div class="panel-scroll">
+        <details class="sec" open>
+          <summary><span>版式与排序</span><span class="sec-meta">LAYOUT</span></summary>
+          <div class="sec-body">
+            <div class="grid-2">
+              <label class="field">
+                <span>分组方式</span>
+                <select id="inGroupBy"></select>
+              </label>
+              <label class="field">
+                <span>列排序</span>
+                <select id="inSortMode"></select>
+              </label>
+            </div>
+            <p class="hint">「生日月份」是参考图同款的横轴分组；「车队」更适合 F1 视角。</p>
+
+            <div class="manual-order" id="manualOrderWrap" hidden>
+              <div class="mini-title">拖动调整列顺序</div>
+              <div class="order-list" id="manualOrder"></div>
+            </div>
+
+            <label class="field">
+              <span>年龄基准日（以此日期计算周岁）</span>
+              <input type="date" id="inAsOf">
+            </label>
+            <div class="quick-row">
+              <button type="button" class="mini-btn" data-date="2027-03-01">赛季开始 2027-03-01</button>
+              <button type="button" class="mini-btn" data-date="today">今天</button>
+            </div>
+
+            <label class="field">
+              <span>卡片姓名</span>
+              <select id="inCardName">
+                <option value="latin">英文姓氏</option>
+                <option value="zh">中文名</option>
+                <option value="full">英文全名</option>
+              </select>
+            </label>
+
+            <div class="grid-2">
+              <label class="field">
+                <span>卡片大小 <b id="cardScaleVal">100%</b></span>
+                <input type="range" id="inCardScale" min="0.7" max="1.35" step="0.05" value="1">
+              </label>
+              <label class="field">
+                <span>字号 <b id="fontScaleVal">108%</b></span>
+                <input type="range" id="inFontScale" min="0.85" max="1.3" step="0.01" value="1.08">
+              </label>
+            </div>
+
+            <div class="grid-2">
+              <label class="field">
+                <span>卡片占列宽 <b id="cardFillVal">90%</b></span>
+                <input type="range" id="inCardFill" min="0.7" max="0.97" step="0.01" value="0.9">
+              </label>
+              <label class="field">
+                <span>纵向密度 <b id="densityVal">40%</b></span>
+                <input type="range" id="inVerticalDensity" min="0.3" max="1" step="0.01" value="0.4">
+              </label>
+            </div>
+            <p class="hint">字号影响卡片与年龄刻度；纵向密度越低，年龄行排得越紧。</p>
+
+            <div class="toggles">
+              <label class="switch"><input type="checkbox" id="inCompactRows"><span class="track"></span><span>紧凑行（隐藏空年龄）</span></label>              <label class="switch"><input type="checkbox" id="inShowPhotos"><span class="track"></span><span>显示照片</span></label>
+              <label class="switch"><input type="checkbox" id="inShowAgeBadge"><span class="track"></span><span>年龄角标</span></label>
+              <label class="switch"><input type="checkbox" id="inShowCountry"><span class="track"></span><span>显示国籍</span></label>
+              <label class="switch"><input type="checkbox" id="inShowBand"><span class="track"></span><span>顶部车队色带</span></label>
+              <label class="switch"><input type="checkbox" id="inAxisGradient"><span class="track"></span><span>左侧渐变色轴</span></label>
+            </div>
+          </div>
+        </details>
+
+        <details class="sec" open>
+          <summary><span>标题与注释</span><span class="sec-meta">TEXT</span></summary>
+          <div class="sec-body">
+            <label class="field">
+              <span>标题</span>
+              <input type="text" id="inTitle" maxlength="60" placeholder="2027 车手生日 / 年龄均排">
+            </label>
+            <label class="field">
+              <span>副标题（选填）</span>
+              <input type="text" id="inSubtitle" maxlength="90" placeholder="留空更接近参考图">
+            </label>
+            <label class="field">
+              <span>右上注记（支持 {date} 占位）</span>
+              <textarea id="inHeaderNote" rows="2" maxlength="140"></textarea>
+            </label>
+            <label class="field">
+              <span>右上第二行注记</span>
+              <input type="text" id="inHeaderSubNote" maxlength="90">
+            </label>
+            <label class="field">
+              <span>页脚右侧文字</span>
+              <input type="text" id="inFooterRight" maxlength="60">
+            </label>
+            <label class="switch"><input type="checkbox" id="inShowFooter"><span class="track"></span><span>在海报底部显示数据信息（参考图没有）</span></label>
+          </div>
+        </details>
+
+        <details class="sec">
+          <summary><span>主题与车队配色</span><span class="sec-meta">THEME</span></summary>
+          <div class="sec-body">
+            <label class="field">
+              <span>配色主题</span>
+              <select id="inTheme"></select>
+            </label>
+            <div class="mini-title">车队颜色 <button class="mini-btn" id="btnAddTeam" type="button">+ 新增车队</button></div>
+            <div class="team-list" id="teamList"></div>
+            <p class="hint">颜色会用于列底色、卡片与列标题；也可在「车手数据」里换队。</p>
+          </div>
+        </details>
+
+        <details class="sec" open>
+          <summary><span>车手数据</span><span class="sec-meta">DATA</span></summary>
+          <div class="sec-body">
+            <div class="season-switch" role="group" aria-label="内置赛季数据">
+              <button type="button" class="season-btn" data-season="2027">2027 赛季 <small>22 人</small></button>
+              <button type="button" class="season-btn" data-season="2026">2026 赛季 <small>25 人</small></button>
+            </div>
+            <p class="hint" id="seasonHint">2027 为已官宣的 22 位车手；2026 为实际参加过正赛的 25 位（含替补）。切换会载入内置阵容。</p>
+            <div class="button-row">
+              <button class="btn btn-primary btn-sm" id="btnAddDriver" type="button">+ 新增车手</button>
+              <button class="btn btn-sm" id="btnImportJson" type="button">导入 JSON</button>
+              <button class="btn btn-sm" id="btnExportJson" type="button">导出 JSON</button>
+            </div>
+            <div class="dataset-row">
+              <select id="datasetSelect" aria-label="本机数据集"></select>
+              <button class="mini-btn" id="btnSaveDataset" type="button" title="保存当前数据为数据集">保存</button>
+              <button class="mini-btn" id="btnLoadDataset" type="button" title="载入所选数据集">载入</button>
+              <button class="mini-btn danger" id="btnDeleteDataset" type="button" title="删除所选数据集">删除</button>
+            </div>
+            <div class="driver-list" id="driverList"></div>
+            <p class="hint">提示：点击画布上的卡片也可以直接编辑。照片会压缩后保存在本机。</p>
+          </div>
+        </details>
+
+        <details class="sec" open>
+          <summary><span>导出图片</span><span class="sec-meta">EXPORT</span></summary>
+          <div class="sec-body">
+            <div class="grid-3">
+              <label class="field">
+                <span>格式</span>
+                <select id="inExportFormat">
+                  <option value="png">PNG</option>
+                  <option value="jpeg">JPEG</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>倍率</span>
+                <select id="inExportScale">
+                  <option value="1">1×</option>
+                  <option value="1.5">1.5×</option>
+                  <option value="2" selected>2×</option>
+                  <option value="3">3×</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>JPEG 质量 <b id="qualityVal">92</b></span>
+                <input type="range" id="inJpegQuality" min="70" max="100" step="1" value="92">
+              </label>
+            </div>
+            <div class="export-size" id="exportSize">—</div>
+            <div class="button-row">
+              <button class="btn btn-primary" id="btnExport" type="button">导出图片</button>
+              <button class="btn" id="btnCopy" type="button">复制到剪贴板</button>
+            </div>
+            <p class="hint">导出为完整分辨率海报，与预览缩放无关。如果觉得海报字小，可看<b>大字卡片流</b>（20 秒，1080×1920，名字 36px / 生日 22px / 年龄 42px）：<a href="exports/f1-2027-driver-feed.mp4" download>下载 MP4</a>；整张海报组装版（14 秒，字小，适合大屏）<a href="exports/f1-2027-age-chart-reveal.mp4" download>另一版</a>。</p>
+          </div>
+        </details>
+
+        <div class="panel-foot">
+          <span>F1 AGE CHART</span>
+          <a href="README.md" target="_blank" rel="noopener">使用说明 / 扩展</a>
+          <a href="credits.html">照片来源与许可</a>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <dialog class="dialog" id="driverDialog">
+    <form id="driverForm" novalidate>
+      <header class="dialog-head">
+        <div>
+          <h2 id="dialogTitle">编辑车手</h2>
+          <span class="dialog-sub" id="dialogSub">修改后立即生效</span>
+        </div>
+        <button class="panel-close" id="btnCloseDialog" type="button" aria-label="关闭">×</button>
+      </header>
+      <div class="dialog-body">
+        <div class="photo-editor">
+          <div class="photo-drop" id="photoDrop" tabindex="0" role="button" aria-label="上传或拖入照片">
+            <canvas id="photoPreview" width="220" height="264"></canvas>
+            <span class="photo-empty" id="photoEmpty">拖入照片<br><em>或点击上传</em></span>
+          </div>
+          <div class="photo-actions">
+            <button class="mini-btn" id="btnPickPhoto" type="button">选择照片</button>
+            <button class="mini-btn" id="btnClearPhoto" type="button">清除照片</button>
+            <button class="mini-btn" id="btnRestorePhoto" type="button" hidden>恢复默认</button>
+          </div>
+          <div class="focus-grid">
+            <label><span>水平</span><input type="range" id="inFocusX" min="0" max="1" step="0.01" value="0.5"></label>
+            <label><span>垂直</span><input type="range" id="inFocusY" min="0" max="1" step="0.01" value="0.35"></label>
+            <label><span>缩放</span><input type="range" id="inFocusZ" min="1" max="2.4" step="0.01" value="1"></label>
+          </div>
+          <input type="file" id="photoInput" accept="image/*" hidden>
+        </div>
+
+        <div class="dialog-fields">
+          <label class="field">
+            <span>姓名（英文，用于全名模式与提示）</span>
+            <input type="text" id="inDriverName" maxlength="50" autocomplete="off">
+          </label>
+          <div class="grid-2">
+            <label class="field">
+              <span>卡片姓名</span>
+              <input type="text" id="inDriverShort" maxlength="24" autocomplete="off">
+            </label>
+            <label class="field">
+              <span>中文名</span>
+              <input type="text" id="inDriverZh" maxlength="12" autocomplete="off">
+            </label>
+          </div>
+          <div class="grid-2">
+            <label class="field">
+              <span>车队</span>
+              <select id="inDriverTeam"></select>
+            </label>
+            <label class="field">
+              <span>国籍代码</span>
+              <input type="text" id="inDriverCountry" maxlength="3" autocomplete="off" placeholder="GBR">
+            </label>
+          </div>
+          <div class="grid-2">
+            <label class="field">
+              <span>生日</span>
+              <input type="date" id="inDriverBirthday">
+            </label>
+            <label class="field">
+              <span>席位状态</span>
+              <select id="inDriverStatus">
+                <option value="confirmed">已官宣</option>
+                <option value="pending">待官宣（显示 ?）</option>
+              </select>
+            </label>
+          </div>
+          <label class="switch"><input type="checkbox" id="inDriverHighlight"><span class="track"></span><span>高亮描边（冠军 / 特别关注）</span></label>
+          <p class="hint" id="driverAgeHint">—</p>
+        </div>
+      </div>
+      <footer class="dialog-foot">
+        <button class="btn btn-danger-ghost" id="btnDeleteDriver" type="button">删除车手</button>
+        <div class="spacer"></div>
+        <button class="btn" id="btnCancelDialog" type="button">取消</button>
+        <button class="btn btn-primary" id="btnSaveDriver" type="submit">保存修改</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <div class="busy-chip" id="busyChip" hidden>
+    <span class="spinner"></span><span>正在生成图片…</span>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/util.js"></script>
+  <script src="js/photos.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/age.js"></script>
+  <script src="js/themes.js"></script>
+  <script src="js/groups.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
